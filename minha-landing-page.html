@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higienização de Estofados - Imperatriz</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f9f7f4; color: #1a1a1a; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a4f3a 0%, #0d6b4f 60%, #1a8c69 100%);
+    padding: 70px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 250px; height: 250px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #a8f0d4;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 span { color: #6ee7b7; }
+  .hero p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  }
+  .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+  .btn-whatsapp svg { width: 22px; height: 22px; }
+
+  .region-bar {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 14px 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .region-bar strong { color: #0a4f3a; }
+
+  .services {
+    padding: 56px 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .services h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0a4f3a;
+    margin-bottom: 8px;
+  }
+  .services .subtitle {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  .service-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 24px 16px;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .service-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .service-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+  .service-card h3 { font-size: 14px; font-weight: 600; color: #1a1a1a; }
+
+  .why {
+    background: #0a4f3a;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .why h2 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 32px; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 720px;
+    margin: 0 auto 40px;
+  }
+  .why-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 24px 16px;
+  }
+  .why-item .num { font-size: 32px; font-weight: 800; color: #6ee7b7; display: block; margin-bottom: 6px; }
+  .why-item p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+
+  .cta-section {
+    padding: 64px 24px;
+    text-align: center;
+    background: #f9f7f4;
+  }
+  .cta-section h2 { font-size: 24px; font-weight: 700; color: #0a4f3a; margin-bottom: 10px; }
+  .cta-section p { font-size: 15px; color: #666; margin-bottom: 28px; }
+
+  footer {
+    background: #111;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+  }
+  footer strong { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="badge">📍 Atendimento em toda a região</div>
+  <h1>Seu estofado <span>limpo e renovado</span> sem sair de casa</h1>
+  <p>Higienização profissional de sofás, colchões, cadeiras e mais — com atendimento em Imperatriz e região do Maranhão.</p>
+  <a class="btn-whatsapp" href="https://wa.me/5599984967134?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20higieniza%C3%A7%C3%A3o%20de%20estofados." target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.116 1.527 5.845L0 24l6.334-1.508A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.645-.52-5.149-1.42l-.369-.219-3.762.896.952-3.672-.24-.379A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Falar no WhatsApp
+  </a>
+</section>
+
+<div class="region-bar">
+  <span>📍</span>
+  Atendemos em <strong>&nbsp;Imperatriz&nbsp;</strong> e toda a região — incluindo municípios vizinhos
+</div>
+
+<section class="services">
+  <h2>O que higienizamos</h2>
+  <p class="subtitle">Tratamento completo para todos os tipos de estofamento</p>
+  <div class="services-grid">
+    <div class="service-card"><span class="service-icon">🛋️</span><h3>Sofás</h3></div>
+    <div class="service-card"><span class="service-icon">🛏️</span><h3>Colchões</h3></div>
+    <div class="service-card"><span class="service-icon">🪑</span><h3>Cadeiras</h3></div>
+    <div class="service-card"><span class="service-icon">🚗</span><h3>Bancos de carro</h3></div>
+    <div class="service-card"><span class="service-icon">🪑</span><h3>Poltronas</h3></div>
+    <div class="service-card"><span class="service-icon">✨</span><h3>Outros</h3></div>
+  </div>
+</section>
+
+<section class="why">
+  <h2>Por que nos escolher?</h2>
+  <div class="why-grid">
+    <div class="why-item"><span class="num">100%</span><p>Produtos seguros, sem resíduos tóxicos para sua família e pets</p></div>
+    <div class="why-item"><span class="num">🏠</span><p>Atendimento no conforto da sua casa, sem precisar transportar nada</p></div>
+    <div class="why-item"><span class="num">🗺️</span><p>Toda a região de Imperatriz e municípios vizinhos</p></div>
+    <div class="why-item"><span class="num">💬</span><p>Orçamento rápido e sem compromisso pelo WhatsApp</p></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Solicite seu orçamento agora</h2>
+  <p>Atendimento rápido — resposta em minutos pelo WhatsApp</p>
+  <a class="btn-whatsapp" href="https://wa.me/5599984967134?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20higieniza%C3%A7%C3%A3o%20de%20estofados." target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.116 1.527 5.845L0 24l6.334-1.508A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.645-.52-5.149-1.42l-.369-.219-3.762.896.952-3.672-.24-.379A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    (99) 98496-7134 — Chamar agora
+  </a>
+</section>
+
+<footer>
+  <strong>Higienização de Estofados</strong> · Imperatriz, Maranhão · Atendemos toda a região
+</footer>
+
+</body>
+</html>
